@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nifty & BankNifty Calls | Telegram</title>
+  <meta name="description"
+    content="Nifty and BankNifty market updates, educational insights and Telegram channel access.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #062b18;
+      --green2: #0b5b2d;
+      --gold: #f5c84c;
+      --gold2: #ffdf79;
+      --cream: #fff9e8;
+      --dark: #03140b;
+      --muted: #b8c7bd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 50% 0%, #12652f 0, transparent 35%),
+        linear-gradient(180deg, #021109, #062716 55%, #021109);
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .07;
+      background-image:
+        linear-gradient(45deg, transparent 46%, #f5c84c 47%, #f5c84c 49%, transparent 50%),
+        linear-gradient(-45deg, transparent 46%, #f5c84c 47%, #f5c84c 49%, transparent 50%);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto
+    }
+
+    .topbar {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(245, 200, 76, .25);
+      background: rgba(0, 0, 0, .2);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .5px;
+      color: var(--gold2)
+    }
+
+    .mini-btn,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: .25s ease;
+      cursor: pointer;
+    }
+
+    .mini-btn {
+      padding: 10px 18px;
+      color: #102313;
+      background: var(--gold);
+    }
+
+    .mini-btn:hover,
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(245, 200, 76, .22)
+    }
+
+    .hero {
+      padding: 55px 0 70px
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: center
+    }
+
+    .eyebrow {
+      color: var(--gold2);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.02;
+      margin-bottom: 20px
+    }
+
+    h1 span {
+      color: var(--gold)
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #d8e3da;
+      max-width: 650px
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px
+    }
+
+    .btn {
+      padding: 15px 24px;
+      background: linear-gradient(135deg, #f7d66a, #dba91f);
+      color: #102313
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(245, 200, 76, .55)
+    }
+
+    .hero-card {
+      background: rgba(0, 0, 0, .34);
+      border: 1px solid rgba(245, 200, 76, .4);
+      border-radius: 28px;
+      padding: 14px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .35)
+    }
+
+    .hero-card img {
+      display: block;
+      width: 100%;
+      border-radius: 20px
+    }
+
+    section {
+      padding: 70px 0
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px
+    }
+
+    .section-title h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 42px
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin-top: 8px
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .card {
+      padding: 28px;
+      border: 1px solid rgba(245, 200, 76, .25);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(16, 88, 43, .55), rgba(0, 0, 0, .25))
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--gold);
+      color: #12351e;
+      font-size: 23px;
+      margin-bottom: 18px
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #fff
+    }
+
+    .card p {
+      color: #bfcfc4;
+      font-size: 15px
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .stat {
+      text-align: center;
+      padding: 28px 15px;
+      border-radius: 20px;
+      background: #071e12;
+      border: 1px solid rgba(245, 200, 76, .25)
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 34px;
+      color: var(--gold)
+    }
+
+    .stat span {
+      color: #bdcabe;
+      font-size: 14px
+    }
+
+    .telegram {
+      text-align: center;
+      padding: 55px 25px;
+      border-radius: 30px;
+      border: 1px solid rgba(245, 200, 76, .45);
+      background: radial-gradient(circle at center, #0c6732, #04170c 70%);
+    }
+
+    .telegram h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      margin-bottom: 10px
+    }
+
+    .telegram p {
+      color: #d0ddd4;
+      max-width: 650px;
+      margin: 0 auto 25px
+    }
+
+    .disclaimer {
+      margin-top: 30px;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(255, 255, 255, .08);
+      color: #9fb0a5;
+      font-size: 12px;
+      text-align: center
+    }
+
+    footer {
+      padding: 25px 0 40px;
+      text-align: center;
+      color: #82968a;
+      font-size: 13px
+    }
+
+    @media(max-width:850px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px
+      }
+
+      .hero {
+        padding-top: 35px
+      }
+
+      .cards,
+      .stats {
+        grid-template-columns: 1fr
+      }
+
+      .topbar-inner {
+        align-items: flex-start
+      }
+
+      .brand {
+        font-size: 14px
+      }
+    }
+
+    @media(max-width:520px) {
+      .hero p {
+        font-size: 16px
+      }
+
+      .section-title h2,
+      .telegram h2 {
+        font-size: 34px
+      }
+
+      .actions {
+        flex-direction: column
+      }
+
+      .btn {
+        width: 100%
+      }
+    }
+  </style>
+</head>
+
+<body>
+ 
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Nifty • BankNifty • Market Updates</div>
+          <h1> Islamic Market<br><span>Simple & Clear.</span></h1>
+          <p>
+            Nifty and BankNifty market updates, educational insights and daily market observations
+            delivered through our Telegram community.
+          </p>
+
+          <div class="actions">
+            <a class="btn" href="https://t.me/+kGAlHQ9phLE3Zjk1" target="_blank" rel="noopener">
+              ✈ Join Telegram
+            </a>
+            <a class="btn secondary" href="https://t.me/+kGAlHQ9phLE3Zjk1">Learn More</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="hero.png" alt="Nifty and BankNifty Telegram promotional poster">
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>What You Get</h2>
+          <p>Useful market information in one place.</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">📈</div>
+            <h3>Nifty & BankNifty</h3>
+            <p>Regular market observations and index-focused educational content.</p>
+          </div>
+          <div class="card">
+            <div class="icon">📊</div>
+            <h3>Daily Updates</h3>
+            <p>Market-related updates and commentary shared through the Telegram channel.</p>
+          </div>
+          <div class="card">
+            <div class="icon">☪</div>
+            <h3>ISLAMIC</h3>
+            <p>A community presentation built around the Islamic-themed branding of the channel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="stats">
+          <div class="stat">
+            <strong>8+</strong>
+            <span>Years Experience*</span>
+          </div>
+          <div class="stat">
+            <strong>40,000+</strong>
+            <span>Community / Investor Claim*</span>
+          </div>
+          <div class="stat">
+            <strong>4–5</strong>
+            <span>Daily Updates*</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="telegram">
+      <div class="container">
+        <div class="telegram">
+          <h2>Join Our Telegram Channel</h2>
+          <p>
+            Get market updates and educational content directly on Telegram.
+            Review all information independently before making any financial decision.
+          </p>
+          <a class="btn" href="https://t.me/+kGAlHQ9phLE3Zjk1" target="_blank" rel="noopener">
+            ✈ JOIN TELEGRAM CHANNEL
+          </a>
+
+          <div class="disclaimer">
+            <strong>Risk Disclosure:</strong> This page is for informational and educational purposes.
+            Market investments and trading involve risk, including possible loss of capital.
+            No profit or return is guaranteed. Replace the placeholder Telegram link and verify
+            all experience/community claims before publishing.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Islamic Market Community • Educational & informational content
+  </footer>
+</body>
+
+</html>
